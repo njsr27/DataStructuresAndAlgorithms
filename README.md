@@ -1,4 +1,4 @@
-# Data Structures & Algorithms using C and C++
+# Data Structures & Algorithms using C
 
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
