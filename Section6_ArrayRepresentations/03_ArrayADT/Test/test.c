@@ -117,7 +117,7 @@ void Search_Binary_TEST(int element) {
     int elementIndex;
     struct Array arr = Array_New(5);
 
-    //We imply element uniqueness
+    //We imply element uniqueness and order
     Array_Add(&arr, 1);
     Array_Add(&arr, 8);
     Array_Add(&arr, 9);
