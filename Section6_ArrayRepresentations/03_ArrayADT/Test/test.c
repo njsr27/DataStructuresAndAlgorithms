@@ -88,7 +88,7 @@ void Delete_TEST() {
     free(arr.A);
 }
 
-void Search_Linear_TEST() {
+void Search_Linear_TEST(int element) {
     int elementIndex;
     struct Array arr = Array_New(5);
 
@@ -104,7 +104,32 @@ void Search_Linear_TEST() {
     Array_Add(&arr, 77);
     Array_Add(&arr, 88);
 
-    elementIndex = Array_Search_Linear(&arr, 77);
+    elementIndex = Array_Search_Linear(&arr, element);
+
+    if(elementIndex >= 0){
+        printf("First element found in index %d. \n", elementIndex);
+    } else {
+        printf("Element not found. \n");
+    }
+}
+
+void Search_Binary_TEST(int element) {
+    int elementIndex;
+    struct Array arr = Array_New(5);
+
+    //We imply element uniqueness
+    Array_Add(&arr, 1);
+    Array_Add(&arr, 8);
+    Array_Add(&arr, 9);
+    Array_Add(&arr, 11);
+    Array_Add(&arr, 12);
+    Array_Add(&arr, 18);
+    Array_Add(&arr, 25);
+    Array_Add(&arr, 52);
+    Array_Add(&arr, 77);
+    Array_Add(&arr, 88);
+
+    elementIndex = Array_Search_Binary(&arr, element);
 
     if(elementIndex >= 0){
         printf("First element found in index %d. \n", elementIndex);

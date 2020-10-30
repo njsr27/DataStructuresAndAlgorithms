@@ -33,7 +33,8 @@ int main() {
     //Add_TEST();
     //Insert_TEST();
     //Delete_TEST();
-    Search_Linear_TEST();
+    //Search_Linear_TEST(25);
+    Search_Binary_TEST(88);
 
     return 0;
 }
