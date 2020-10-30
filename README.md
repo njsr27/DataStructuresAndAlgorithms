@@ -14,9 +14,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-I created this project with the goal in mind of displaying a little bit of my progress in the long and harsh world of self-taught software engineering. 
-I don't consider myself and expert in the field but I'm always willing to learn everything I can, so feel free to comment any possible
-improvement I could add in the code.
+I created this project with the goal of displaying a little bit of my progress in the long and harsh world of self-taught software engineering. 
+I don't consider myself an expert in the field but I'm always willing to learn everything I can, so feel free to comment any possible
+improvements I could add in the code.
 
 If you are reading this, thank you in advance!
 
