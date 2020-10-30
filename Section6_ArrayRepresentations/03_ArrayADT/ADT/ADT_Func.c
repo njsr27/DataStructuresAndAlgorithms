@@ -76,18 +76,18 @@ int Array_Search_Linear(struct Array *arr, int element) {
 int Array_Search_Binary(struct Array *arr, int element) {
     int low = 0;
     int high = arr->length - 1;
-    int mid = (low + high) / 2;
+    int mid;
 
     while(low <= high){
+
+        mid = (low + high) / 2;
 
         if(arr->A[mid] == element){
             return mid;
         } else if(arr->A[mid] < element){
             low = mid + 1;
-            mid = (low + high) / 2;
         } else {
             high = mid - 1;
-            mid = (low + high) / 2;
         }
 
     }
