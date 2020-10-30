@@ -82,14 +82,10 @@ int Array_Search_Binary(struct Array *arr, int element) {
 
         if(arr->A[mid] == element){
             return mid;
-        }
-
-        if(arr->A[mid] < element){
+        } else if(arr->A[mid] < element){
             low = mid + 1;
             mid = (low + high) / 2;
-        }
-
-        if(arr->A[mid] > element){
+        } else {
             high = mid - 1;
             mid = (low + high) / 2;
         }
