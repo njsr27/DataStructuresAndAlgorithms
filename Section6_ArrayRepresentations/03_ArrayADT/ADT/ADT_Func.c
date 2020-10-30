@@ -62,3 +62,13 @@ int Array_Delete(struct Array *arr, int index) {
         return 1;
     }
 }
+
+int Array_Search_Linear(struct Array *arr, int element) {
+    for (int i = 0; i < arr->length; ++i) {
+        if(arr->A[i] == element){
+            return i;
+        }
+    }
+
+    return -1;
+}

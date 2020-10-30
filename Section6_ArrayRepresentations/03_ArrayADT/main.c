@@ -32,7 +32,8 @@ int main() {
     //Display_TEST();
     //Add_TEST();
     //Insert_TEST();
-    Delete_TEST();
+    //Delete_TEST();
+    Search_Linear_TEST();
 
     return 0;
 }
