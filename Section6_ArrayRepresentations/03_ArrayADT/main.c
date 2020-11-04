@@ -34,7 +34,18 @@ int main() {
     //Insert_TEST();
     //Delete_TEST();
     //Search_Linear_TEST(25);
-    Search_Binary_TEST(88);
+    //Search_Binary_TEST(88);
+    //Get_TEST(3);
+    //Set_TEST(2, 99);
+    //Max_TEST();
+    //Min_TEST();
+    //Sum_TEST();
+    //Avg_TEST();
+    //Reverse_TEST();
+    //Left_Shift_TEST();
+    //Left_Rotate_TEST();
+    //Right_Shift_TEST();
+    //Right_Rotate_TEST();
 
     return 0;
 }

@@ -20,7 +20,8 @@ void Display_TEST() {
     arr.length = 5;
 
     Array_Display(&arr);
-    free(arr.A);
+
+    Array_Free(&arr);
 }
 
 void Add_TEST() {
@@ -41,7 +42,7 @@ void Add_TEST() {
     printf("Size: %d\n", arr.size);
     printf("Length: %d\n", arr.length);
 
-    free(arr.A);
+    Array_Free(&arr);
 }
 
 void Insert_TEST() {
@@ -57,7 +58,7 @@ void Insert_TEST() {
         printf("Length: %d\n", arr.length);
     };
 
-    free(arr.A);
+    Array_Free(&arr);
 }
 
 void Delete_TEST() {
@@ -85,7 +86,7 @@ void Delete_TEST() {
     printf("Size: %d\n", arr.size);
     printf("Length: %d\n", arr.length);
 
-    free(arr.A);
+    Array_Free(&arr);
 }
 
 void Search_Linear_TEST(int element) {
@@ -106,11 +107,13 @@ void Search_Linear_TEST(int element) {
 
     elementIndex = Array_Search_Linear(&arr, element);
 
-    if(elementIndex >= 0){
+    if (elementIndex >= 0) {
         printf("First element found in index %d. \n", elementIndex);
     } else {
         printf("Element not found. \n");
     }
+
+    free(arr.A);
 }
 
 void Search_Binary_TEST(int element) {
@@ -131,9 +134,212 @@ void Search_Binary_TEST(int element) {
 
     elementIndex = Array_Search_Binary(&arr, element);
 
-    if(elementIndex >= 0){
+    if (elementIndex >= 0) {
         printf("First element found in index %d. \n", elementIndex);
     } else {
         printf("Element not found. \n");
     }
+
+    Array_Free(&arr);
+}
+
+void Get_TEST(int index) {
+    int elementIndex;
+    struct Array arr = Array_New(5);
+
+    Array_Add(&arr, 1);
+    Array_Add(&arr, 8);
+    Array_Add(&arr, 9);
+    Array_Add(&arr, 11);
+    Array_Add(&arr, 12);
+
+    elementIndex = Array_Get(&arr, index);
+
+    if (elementIndex >= 0) {
+        printf("First element found in index %d. \n", elementIndex);
+    } else {
+        printf("Element not found. \n");
+    }
+
+    Array_Free(&arr);
+}
+
+void Set_TEST(int index, int value) {
+    struct Array arr = Array_New(5);
+
+    Array_Add(&arr, 1);
+    Array_Add(&arr, 8);
+    Array_Add(&arr, 9);
+    Array_Add(&arr, 11);
+    Array_Add(&arr, 12);
+
+    Array_Set(&arr, index, value);
+
+    Array_Display(&arr);
+
+    Array_Free(&arr);
+}
+
+void Max_TEST() {
+    struct Array arr = Array_New(5);
+
+    Array_Add(&arr, 1);
+    Array_Add(&arr, 8);
+    Array_Add(&arr, 32);
+    Array_Add(&arr, 11);
+    Array_Add(&arr, 12);
+
+    printf("Max number in array is: %d", Array_Max(&arr));
+
+    Array_Free(&arr);
+}
+
+void Min_TEST() {
+    struct Array arr = Array_New(5);
+
+    Array_Add(&arr, 5);
+    Array_Add(&arr, 8);
+    Array_Add(&arr, 32);
+    Array_Add(&arr, 11);
+    Array_Add(&arr, 2);
+
+    printf("Min number in array is: %d", Array_Min(&arr));
+
+    Array_Free(&arr);
+}
+
+void Sum_TEST() {
+    struct Array arr = Array_New(5);
+
+    Array_Add(&arr, 5);
+    Array_Add(&arr, 8);
+    Array_Add(&arr, 32);
+    Array_Add(&arr, 11);
+    Array_Add(&arr, 2);
+
+    printf("The sum of the elements in the array is: %d", Array_Sum(&arr));
+
+    Array_Free(&arr);
+}
+
+void Avg_TEST() {
+    struct Array arr = Array_New(5);
+
+    Array_Add(&arr, 5);
+    Array_Add(&arr, 8);
+    Array_Add(&arr, 32);
+    Array_Add(&arr, 11);
+    Array_Add(&arr, 2);
+
+    printf("The avg of the elements in the array is: %.2f", Array_Avg(&arr));
+
+    Array_Free(&arr);
+}
+
+void Reverse_TEST() {
+    struct Array arr = Array_New(5);
+
+    Array_Add(&arr, 1);
+    Array_Add(&arr, 6);
+    Array_Add(&arr, 5);
+    Array_Add(&arr, 7);
+    Array_Add(&arr, 12);
+    Array_Add(&arr, 11);
+    Array_Add(&arr, 15);
+    Array_Add(&arr, 99);
+    Array_Add(&arr, 77);
+    Array_Add(&arr, 88);
+
+    arr = Array_Reverse(&arr);
+    Array_Display(&arr);
+
+    Array_Free(&arr);
+}
+
+void Left_Shift_TEST() {
+    struct Array arr = Array_New(5);
+
+    Array_Add(&arr, 1);
+    Array_Add(&arr, 6);
+    Array_Add(&arr, 5);
+    Array_Add(&arr, 7);
+    Array_Add(&arr, 12);
+    Array_Add(&arr, 11);
+    Array_Add(&arr, 15);
+    Array_Add(&arr, 99);
+    Array_Add(&arr, 77);
+    Array_Add(&arr, 88);
+
+    Array_Left_Shift(&arr);
+    Array_Left_Shift(&arr);
+    Array_Left_Shift(&arr);
+    Array_Display(&arr);
+
+    Array_Free(&arr);
+}
+
+void Left_Rotate_TEST() {
+    struct Array arr = Array_New(5);
+
+    Array_Add(&arr, 1);
+    Array_Add(&arr, 6);
+    Array_Add(&arr, 5);
+    Array_Add(&arr, 7);
+    Array_Add(&arr, 12);
+    Array_Add(&arr, 11);
+    Array_Add(&arr, 15);
+    Array_Add(&arr, 99);
+    Array_Add(&arr, 77);
+    Array_Add(&arr, 88);
+
+    Array_Left_Rotate(&arr);
+    Array_Left_Rotate(&arr);
+    Array_Left_Rotate(&arr);
+    Array_Display(&arr);
+
+    Array_Free(&arr);
+}
+
+void Right_Shift_TEST() {
+    struct Array arr = Array_New(5);
+
+    Array_Add(&arr, 1);
+    Array_Add(&arr, 6);
+    Array_Add(&arr, 5);
+    Array_Add(&arr, 7);
+    Array_Add(&arr, 12);
+    Array_Add(&arr, 11);
+    Array_Add(&arr, 15);
+    Array_Add(&arr, 99);
+    Array_Add(&arr, 77);
+    Array_Add(&arr, 88);
+
+    Array_Right_Shift(&arr);
+    Array_Right_Shift(&arr);
+    Array_Right_Shift(&arr);
+    Array_Display(&arr);
+
+    Array_Free(&arr);
+}
+
+void Right_Rotate_TEST() {
+    struct Array arr = Array_New(5);
+
+    Array_Add(&arr, 1);
+    Array_Add(&arr, 6);
+    Array_Add(&arr, 5);
+    Array_Add(&arr, 7);
+    Array_Add(&arr, 12);
+    Array_Add(&arr, 11);
+    Array_Add(&arr, 15);
+    Array_Add(&arr, 99);
+    Array_Add(&arr, 77);
+    Array_Add(&arr, 88);
+
+    Array_Right_Rotate(&arr);
+    Array_Right_Rotate(&arr);
+    Array_Right_Rotate(&arr);
+    Array_Display(&arr);
+
+    Array_Free(&arr);
 }
