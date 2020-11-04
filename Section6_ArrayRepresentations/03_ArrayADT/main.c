@@ -29,7 +29,6 @@
  *
  * 14. Merge sorted arrays
  *
- *
  */
 
 int main() {
@@ -55,7 +54,8 @@ int main() {
     //Right_Rotate_TEST();
     //Insert_Sorted_TEST(15);
     //Array_Is_Sorted_TEST();
-    Array_Negative_Positive_TEST();
+    //Array_Negative_Positive_TEST();
+    Array_Merge_Sorted_TEST();
 
     return 0;
 }
