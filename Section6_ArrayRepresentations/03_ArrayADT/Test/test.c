@@ -343,3 +343,56 @@ void Right_Rotate_TEST() {
 
     Array_Free(&arr);
 }
+
+void Insert_Sorted_TEST(int value) {
+    struct Array arr = Array_New(5);
+    Array_Add(&arr, 1);
+    Array_Add(&arr, 3);
+    Array_Add(&arr, 5);
+    Array_Add(&arr, 7);
+    Array_Add(&arr, 8);
+    if (Array_Insert_Sorted(&arr, value)) {
+        Array_Display(&arr);
+        printf("Size: %d\n", arr.size);
+        printf("Length: %d\n", arr.length);
+    };
+
+    Array_Free(&arr);
+}
+
+void Array_Is_Sorted_TEST() {
+    struct Array arr = Array_New(5);
+    Array_Add(&arr, 1);
+    Array_Add(&arr, 3);
+    Array_Add(&arr, 6);
+    Array_Add(&arr, 7);
+    Array_Add(&arr, 8);
+
+    if (Array_Is_Sorted(&arr)) {
+        printf("Array is sorted!");
+    } else {
+        printf("Array is not sorted!");
+    }
+
+    Array_Free(&arr);
+}
+
+void Array_Negative_Positive_TEST() {
+    struct Array arr = Array_New(5);
+
+    Array_Add(&arr, 10);
+    Array_Add(&arr, 6);
+    Array_Add(&arr, -5);
+    Array_Add(&arr, 7);
+    Array_Add(&arr, 12);
+    Array_Add(&arr, -11);
+    Array_Add(&arr, 15);
+    Array_Add(&arr, -99);
+    Array_Add(&arr, 77);
+    Array_Add(&arr, -7);
+
+    Array_Arrange_Negative_Positive(&arr);
+    Array_Display(&arr);
+
+    Array_Free(&arr);
+}

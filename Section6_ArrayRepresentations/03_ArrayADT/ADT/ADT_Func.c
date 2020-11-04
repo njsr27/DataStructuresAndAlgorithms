@@ -228,3 +228,44 @@ void Array_Right_Rotate(struct Array *arr) {
         arr->A[i] = arr->A[i] - arr->A[arr->length - 1];
     }
 }
+
+int Array_Insert_Sorted(struct Array *arr, int value) {
+    for (int i = 0; i < arr->length; ++i) {
+        if (arr->A[i] >= value) {
+            return Array_Insert(arr, i, value);
+        }
+    }
+
+    return Array_Insert(arr, arr->length, value);
+}
+
+int Array_Is_Sorted(struct Array *arr) {
+    for (int i = 0; i < arr->length - 1; ++i) {
+        if (arr->A[i] > arr->A[i + 1]) {
+            return 0;
+        }
+    }
+
+    return 1;
+}
+
+int Array_Arrange_Negative_Positive(struct Array *arr) {
+
+    int low = 0;
+    int high = arr->length - 1;
+
+    while (low < high) {
+        if (arr->A[low] < 0) {
+            low++;
+        } else {
+            arr->A[high] = arr->A[high] + arr->A[low];
+            arr->A[low] = arr->A[high] - arr->A[low];
+            arr->A[high] = arr->A[high] - arr->A[low];
+            high--;
+        }
+
+    }
+
+}
+
+//TODO Merge sorted arrays

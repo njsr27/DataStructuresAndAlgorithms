@@ -23,6 +23,13 @@
  * 9. Reverse ()
  * 10. Shift() / Rotate()
  *
+ * 11. Inserting in a sorted array
+ * 12. Checking if array is sorted
+ * 13. Arranging negative elements left side, positive on right side
+ *
+ * 14. Merge sorted arrays
+ *
+ *
  */
 
 int main() {
@@ -46,6 +53,9 @@ int main() {
     //Left_Rotate_TEST();
     //Right_Shift_TEST();
     //Right_Rotate_TEST();
+    //Insert_Sorted_TEST(15);
+    //Array_Is_Sorted_TEST();
+    Array_Negative_Positive_TEST();
 
     return 0;
 }
