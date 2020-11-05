@@ -313,3 +313,110 @@ struct Array Array_Merge_Sorted(struct Array *arr1, struct Array *arr2) {
 
     return arr3;
 }
+
+struct Array Array_Union_Sorted(struct Array *arr1, struct Array *arr2) {
+
+    int i = 0;
+    int j = 0;
+
+    struct Array arr3 = Array_New(arr1->size + arr2->size);
+
+    while (i < arr1->length &&
+           j < arr2->length) {
+
+        if (arr1->A[i] < arr2->A[j]) {
+            Array_Add(&arr3, arr1->A[i]);
+            i++;
+        } else if (arr1->A[i] > arr2->A[j]) {
+            Array_Add(&arr3, arr2->A[j]);
+            j++;
+        } else {
+            Array_Add(&arr3, arr2->A[j]);
+            j++;
+            i++;
+        }
+
+    }
+
+    if (i != arr1->length &&
+        j == arr2->length
+            ) {
+
+        for (int k = i; k < arr1->length; ++k) {
+            Array_Add(&arr3, arr1->A[k]);
+            i++;
+        }
+    }
+
+    if (i == arr1->length &&
+        j != arr2->length
+            ) {
+
+        for (int k = j; k < arr2->length; ++k) {
+            Array_Add(&arr3, arr2->A[k]);
+            j++;
+        }
+    }
+
+    Array_Free(arr1);
+    Array_Free(arr2);
+
+    return arr3;
+}
+
+struct Array Array_Intersection_Sorted(struct Array *arr1, struct Array *arr2) {
+
+    int i = 0;
+    int j = 0;
+
+    struct Array arr3 = Array_New(arr1->size + arr2->size);
+
+    while (i < arr1->length &&
+           j < arr2->length) {
+
+        if (arr1->A[i] < arr2->A[j]) {
+            i++;
+        } else if (arr1->A[i] > arr2->A[j]) {
+            j++;
+        } else {
+            Array_Add(&arr3, arr2->A[j]);
+            j++;
+            i++;
+        }
+
+    }
+
+    Array_Free(arr1);
+    Array_Free(arr2);
+
+    return arr3;
+}
+
+struct Array Array_Difference_Sorted(struct Array *arr1, struct Array *arr2) {
+
+    int i = 0;
+    int j = 0;
+
+    struct Array arr3 = Array_New(arr1->size + arr2->size);
+
+    while (i < arr1->length &&
+           j < arr2->length) {
+
+        if (arr1->A[i] < arr2->A[j]) {
+            Array_Add(&arr3, arr1->A[i]);
+            i++;
+        } else if (arr1->A[i] > arr2->A[j]) {
+            Array_Add(&arr3, arr2->A[j]);
+            j++;
+        } else {
+            j++;
+            i++;
+        }
+
+    }
+
+    Array_Free(arr1);
+    Array_Free(arr2);
+
+    return arr3;
+}

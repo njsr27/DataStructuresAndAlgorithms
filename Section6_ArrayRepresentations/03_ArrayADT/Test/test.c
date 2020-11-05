@@ -407,8 +407,9 @@ void Array_Merge_Sorted_TEST() {
     Array_Add(&arr1, 50);
     Array_Add(&arr1, 95);
     Array_Add(&arr1, 158);
+
     Array_Add(&arr2, 2);
-    Array_Add(&arr2, 74);
+    Array_Add(&arr2, 50);
     Array_Add(&arr2, 88);
     Array_Add(&arr2, 150);
     Array_Add(&arr2, 154);
@@ -416,6 +417,78 @@ void Array_Merge_Sorted_TEST() {
     Array_Add(&arr2, 178);
 
     arr3 = Array_Merge_Sorted(&arr1, &arr2);
+
+    Array_Display(&arr3);
+}
+
+void Array_Union_Sorted_TEST() {
+    struct Array arr1 = Array_New(5);
+    struct Array arr2 = Array_New(5);
+    struct Array arr3;
+
+    Array_Add(&arr1, 1);
+    Array_Add(&arr1, 8);
+    Array_Add(&arr1, 50);
+    Array_Add(&arr1, 95);
+    Array_Add(&arr1, 158);
+
+    Array_Add(&arr2, 2);
+    Array_Add(&arr2, 50);
+    Array_Add(&arr2, 88);
+    Array_Add(&arr2, 150);
+    Array_Add(&arr2, 154);
+    Array_Add(&arr2, 166);
+    Array_Add(&arr2, 178);
+
+    arr3 = Array_Union_Sorted(&arr1, &arr2);
+
+    Array_Display(&arr3);
+}
+
+void Array_Intersection_Sorted_TEST() {
+    struct Array arr1 = Array_New(5);
+    struct Array arr2 = Array_New(5);
+    struct Array arr3;
+
+    Array_Add(&arr1, 1);
+    Array_Add(&arr1, 8);
+    Array_Add(&arr1, 50);
+    Array_Add(&arr1, 95);
+    Array_Add(&arr1, 158);
+
+    Array_Add(&arr2, 2);
+    Array_Add(&arr2, 51);
+    Array_Add(&arr2, 88);
+    Array_Add(&arr2, 150);
+    Array_Add(&arr2, 154);
+    Array_Add(&arr2, 156);
+    Array_Add(&arr2, 158);
+
+    arr3 = Array_Intersection_Sorted(&arr1, &arr2);
+
+    Array_Display(&arr3);
+}
+
+void Array_Difference_Sorted_TEST() {
+    struct Array arr1 = Array_New(5);
+    struct Array arr2 = Array_New(5);
+    struct Array arr3;
+
+    Array_Add(&arr1, 1);
+    Array_Add(&arr1, 8);
+    Array_Add(&arr1, 50);
+    Array_Add(&arr1, 95);
+    Array_Add(&arr1, 158);
+
+    Array_Add(&arr2, 2);
+    Array_Add(&arr2, 51);
+    Array_Add(&arr2, 88);
+    Array_Add(&arr2, 95);
+    Array_Add(&arr2, 154);
+    Array_Add(&arr2, 156);
+    Array_Add(&arr2, 158);
+
+    arr3 = Array_Difference_Sorted(&arr1, &arr2);
 
     Array_Display(&arr3);
 }

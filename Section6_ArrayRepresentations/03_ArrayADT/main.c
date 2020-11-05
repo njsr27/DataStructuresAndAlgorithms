@@ -29,6 +29,10 @@
  *
  * 14. Merge sorted arrays
  *
+ * 15. Union
+ * 16. Intersection
+ * 17. Difference
+ *
  */
 
 int main() {
@@ -55,7 +59,10 @@ int main() {
     //Insert_Sorted_TEST(15);
     //Array_Is_Sorted_TEST();
     //Array_Negative_Positive_TEST();
-    Array_Merge_Sorted_TEST();
+    //Array_Merge_Sorted_TEST();
+    //Array_Union_Sorted_TEST();
+    //Array_Intersection_Sorted_TEST();
+    Array_Difference_Sorted_TEST();
 
     return 0;
 }
