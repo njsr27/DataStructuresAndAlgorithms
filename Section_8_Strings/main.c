@@ -1,6 +1,10 @@
-#include <stdio.h>
+#include "Exercises.c"
 
 int main() {
-    printf("Hello, World!\n");
+
+    //introduction();
+    //String_Length("Test");
+    String_ToLowerCase();
+
     return 0;
 }
