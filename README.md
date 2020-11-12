@@ -23,7 +23,7 @@ If you are reading this, thank you in advance!
 
 ## Course
 
-The course can be found </herhttps://www.udemy.com/course/datastructurescncpp/  <br>
+The course can be found [here](https://www.udemy.com/course/datastructurescncpp/) <br>
 
 <!-- LICENSE -->
 ## License
