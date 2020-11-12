@@ -7,6 +7,7 @@
 ## Table of Contents
 
 * [About the Project](#about-the-project)
+* [Course](#course)
 * [License](#license)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
@@ -19,6 +20,10 @@ I don't consider myself an expert in the field but I'm always willing to learn e
 improvements I could add in the code.
 
 If you are reading this, thank you in advance!
+
+## Course
+
+The course can be found </herhttps://www.udemy.com/course/datastructurescncpp/  <br>
 
 <!-- LICENSE -->
 ## License
