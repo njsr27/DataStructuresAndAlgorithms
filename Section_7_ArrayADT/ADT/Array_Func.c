@@ -1,6 +1,6 @@
 #include "stdio.h"
 #include "stdlib.h"
-#include "ADT.c"
+#include "Array.c"
 
 struct Array Array_New(int size) {
     struct Array arr;

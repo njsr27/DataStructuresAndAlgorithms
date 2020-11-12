@@ -1,4 +1,4 @@
-#include "../ADT/ADT_Func.c"
+#include "../ADT/Array_Func.c"
 #include "stdlib.h"
 #include "stdio.h"
 
