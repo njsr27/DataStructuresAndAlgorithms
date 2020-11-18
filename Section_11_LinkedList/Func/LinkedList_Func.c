@@ -96,3 +96,22 @@ int LinkedList_Min(struct LinkedList * list){
         return -1;
     }
 }
+
+struct Node* LinkedList_Search(struct LinkedList * list, int val){
+    struct Node* actual;
+
+    if(list->length > 0){
+        actual = list->head;
+
+        for (int i = 1; i <= list->length; ++i) {
+            if(actual->value == val){
+               return actual;
+            }
+            actual = actual->next;
+        }
+
+        return (void*)0;
+    } else {
+        return (void*)0;
+    }
+}
