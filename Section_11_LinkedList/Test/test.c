@@ -16,18 +16,18 @@ void Add_TEST() {
     printf("===== Add_TEST =====\n");
 
     struct LinkedList list = LinkedList_New();
-    LinkedList_Add(&list, Node_New(5));
-    LinkedList_Add(&list, Node_New(45));
-    LinkedList_Add(&list, Node_New(12));
-    LinkedList_Add(&list, Node_New(18));
-    LinkedList_Add(&list, Node_New(19));
-    LinkedList_Add(&list, Node_New(25));
-    LinkedList_Add(&list, Node_New(22));
-    LinkedList_Add(&list, Node_New(12));
-    LinkedList_Add(&list, Node_New(23));
-    LinkedList_Add(&list, Node_New(555));
-    LinkedList_Add(&list, Node_New(145));
-    LinkedList_Add(&list, Node_New(123));
+    LinkedList_Add(&list, 5);
+    LinkedList_Add(&list, 45);
+    LinkedList_Add(&list, 12);
+    LinkedList_Add(&list, 18);
+    LinkedList_Add(&list, 19);
+    LinkedList_Add(&list, 25);
+    LinkedList_Add(&list, 22);
+    LinkedList_Add(&list, 12);
+    LinkedList_Add(&list, 23);
+    LinkedList_Add(&list, 555);
+    LinkedList_Add(&list, 145);
+    LinkedList_Add(&list, 123);
 
     LinkedList_Display(&list);
     printf("Length: %d\n", list.length);
@@ -37,18 +37,18 @@ void Sum_TEST() {
     printf("===== Add_TEST =====\n");
 
     struct LinkedList list = LinkedList_New();
-    LinkedList_Add(&list, Node_New(1));
-    LinkedList_Add(&list, Node_New(1));
-    LinkedList_Add(&list, Node_New(1));
-    LinkedList_Add(&list, Node_New(1));
-    LinkedList_Add(&list, Node_New(1));
-    LinkedList_Add(&list, Node_New(1));
-    LinkedList_Add(&list, Node_New(1));
-    LinkedList_Add(&list, Node_New(1));
-    LinkedList_Add(&list, Node_New(1));
-    LinkedList_Add(&list, Node_New(1));
-    LinkedList_Add(&list, Node_New(1));
-    LinkedList_Add(&list, Node_New(1));
+    LinkedList_Add(&list, 1);
+    LinkedList_Add(&list, 1);
+    LinkedList_Add(&list, 1);
+    LinkedList_Add(&list, 1);
+    LinkedList_Add(&list, 1);
+    LinkedList_Add(&list, 1);
+    LinkedList_Add(&list, 1);
+    LinkedList_Add(&list, 1);
+    LinkedList_Add(&list, 1);
+    LinkedList_Add(&list, 1);
+    LinkedList_Add(&list, 1);
+    LinkedList_Add(&list, 1);
 
     printf("The sum of all the elements is: %d\n", LinkedList_Sum(&list));
 }
@@ -57,18 +57,18 @@ void Min_Max_TEST() {
     printf("===== Add_TEST =====\n");
 
     struct LinkedList list = LinkedList_New();
-    LinkedList_Add(&list, Node_New(5));
-    LinkedList_Add(&list, Node_New(45));
-    LinkedList_Add(&list, Node_New(12));
-    LinkedList_Add(&list, Node_New(18));
-    LinkedList_Add(&list, Node_New(19));
-    LinkedList_Add(&list, Node_New(25));
-    LinkedList_Add(&list, Node_New(22));
-    LinkedList_Add(&list, Node_New(12));
-    LinkedList_Add(&list, Node_New(23));
-    LinkedList_Add(&list, Node_New(1));
-    LinkedList_Add(&list, Node_New(145));
-    LinkedList_Add(&list, Node_New(123));
+    LinkedList_Add(&list, 5);
+    LinkedList_Add(&list, 45);
+    LinkedList_Add(&list, 12);
+    LinkedList_Add(&list, 18);
+    LinkedList_Add(&list, 19);
+    LinkedList_Add(&list, 25);
+    LinkedList_Add(&list, 22);
+    LinkedList_Add(&list, 12);
+    LinkedList_Add(&list, 23);
+    LinkedList_Add(&list, 1);
+    LinkedList_Add(&list, 145);
+    LinkedList_Add(&list, 123);
 
     printf("The minimum number of all the elements is: %d\n", LinkedList_Min(&list));
     printf("The maximum number of all the elements is: %d\n", LinkedList_Max(&list));
@@ -78,18 +78,18 @@ void Search_TEST() {
     printf("===== Search_TEST =====\n");
 
     struct LinkedList list = LinkedList_New();
-    LinkedList_Add(&list, Node_New(5));
-    LinkedList_Add(&list, Node_New(45));
-    LinkedList_Add(&list, Node_New(12));
-    LinkedList_Add(&list, Node_New(18));
-    LinkedList_Add(&list, Node_New(19));
-    LinkedList_Add(&list, Node_New(25));
-    LinkedList_Add(&list, Node_New(22));
-    LinkedList_Add(&list, Node_New(12));
-    LinkedList_Add(&list, Node_New(23));
-    LinkedList_Add(&list, Node_New(1));
-    LinkedList_Add(&list, Node_New(145));
-    LinkedList_Add(&list, Node_New(123));
+    LinkedList_Add(&list, 5);
+    LinkedList_Add(&list, 45);
+    LinkedList_Add(&list, 12);
+    LinkedList_Add(&list, 18);
+    LinkedList_Add(&list, 19);
+    LinkedList_Add(&list, 25);
+    LinkedList_Add(&list, 22);
+    LinkedList_Add(&list, 12);
+    LinkedList_Add(&list, 23);
+    LinkedList_Add(&list, 1);
+    LinkedList_Add(&list, 145);
+    LinkedList_Add(&list, 123);
 
     if(LinkedList_Search(&list, 5)){
         printf("Element found!\n");
@@ -103,26 +103,26 @@ void Insert_TEST() {
     printf("===== Insert_TEST =====\n");
 
     struct LinkedList list = LinkedList_New();
-    LinkedList_Add(&list, Node_New(5));
-    LinkedList_Add(&list, Node_New(45));
-    LinkedList_Add(&list, Node_New(12));
-    LinkedList_Add(&list, Node_New(18));
-    LinkedList_Add(&list, Node_New(19));
-    LinkedList_Add(&list, Node_New(25));
-    LinkedList_Add(&list, Node_New(22));
-    LinkedList_Add(&list, Node_New(12));
-    LinkedList_Add(&list, Node_New(23));
-    LinkedList_Add(&list, Node_New(555));
-    LinkedList_Add(&list, Node_New(145));
-    LinkedList_Add(&list, Node_New(123));
+    LinkedList_Add(&list, 5);
+    LinkedList_Add(&list, 45);
+    LinkedList_Add(&list, 12);
+    LinkedList_Add(&list, 18);
+    LinkedList_Add(&list, 19);
+    LinkedList_Add(&list, 25);
+    LinkedList_Add(&list, 22);
+    LinkedList_Add(&list, 12);
+    LinkedList_Add(&list, 23);
+    LinkedList_Add(&list, 555);
+    LinkedList_Add(&list, 145);
+    LinkedList_Add(&list, 123);
 
-    LinkedList_Insert(&list, Node_New(99), 12);
+    LinkedList_Insert(&list, 99, 0);
 
-    /*LinkedList_Insert(&list, Node_New(5), 0);
-    LinkedList_Insert(&list, Node_New(45), 1);
-    LinkedList_Insert(&list, Node_New(12), 2);
-    LinkedList_Insert(&list, Node_New(18), 3);
-    LinkedList_Insert(&list, Node_New(19), 4);*/
+    /*LinkedList_Insert(&list, 5, 0);
+    LinkedList_Insert(&list, 45, 1);
+    LinkedList_Insert(&list, 12, 2);
+    LinkedList_Insert(&list, 18, 3);
+    LinkedList_Insert(&list, 19, 4);*/
 
     LinkedList_Display(&list);
     printf("Length: %d\n", list.length);

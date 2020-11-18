@@ -9,7 +9,9 @@ struct LinkedList LinkedList_New() {
     return list;
 }
 
-void LinkedList_Add(struct LinkedList *list, struct Node *element) {
+void LinkedList_Add(struct LinkedList *list, int val) {
+    struct Node *element = Node_New(val);
+
     if(list->length == 0){
         list->head = element;
     } else {
@@ -116,8 +118,9 @@ struct Node* LinkedList_Search(struct LinkedList * list, int val){
     }
 }
 
-int LinkedList_Insert(struct LinkedList * list, struct Node* element, int index){
+int LinkedList_Insert(struct LinkedList * list, int val, int index){
     struct Node* actual;
+    struct Node *element = Node_New(val);
 
     if(index <= list->length){
         if(index == 0){
