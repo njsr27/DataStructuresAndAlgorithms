@@ -98,3 +98,26 @@ void Search_TEST() {
     }
 
 }
+
+void Insert_TEST() {
+    printf("===== Insert_TEST =====\n");
+
+    struct LinkedList list = LinkedList_New();
+    LinkedList_Add(&list, Node_New(5));
+    LinkedList_Add(&list, Node_New(45));
+    LinkedList_Add(&list, Node_New(12));
+    LinkedList_Add(&list, Node_New(18));
+    LinkedList_Add(&list, Node_New(19));
+    LinkedList_Add(&list, Node_New(25));
+    LinkedList_Add(&list, Node_New(22));
+    LinkedList_Add(&list, Node_New(12));
+    LinkedList_Add(&list, Node_New(23));
+    LinkedList_Add(&list, Node_New(555));
+    LinkedList_Add(&list, Node_New(145));
+    LinkedList_Add(&list, Node_New(123));
+
+    LinkedList_Insert(&list, Node_New(99), 2);
+
+    LinkedList_Display(&list);
+    printf("Length: %d\n", list.length);
+}
