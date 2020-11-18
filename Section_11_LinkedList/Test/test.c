@@ -116,7 +116,13 @@ void Insert_TEST() {
     LinkedList_Add(&list, Node_New(145));
     LinkedList_Add(&list, Node_New(123));
 
-    LinkedList_Insert(&list, Node_New(99), 2);
+    LinkedList_Insert(&list, Node_New(99), 12);
+
+    /*LinkedList_Insert(&list, Node_New(5), 0);
+    LinkedList_Insert(&list, Node_New(45), 1);
+    LinkedList_Insert(&list, Node_New(12), 2);
+    LinkedList_Insert(&list, Node_New(18), 3);
+    LinkedList_Insert(&list, Node_New(19), 4);*/
 
     LinkedList_Display(&list);
     printf("Length: %d\n", list.length);

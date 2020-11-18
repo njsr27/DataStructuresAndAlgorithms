@@ -119,10 +119,13 @@ struct Node* LinkedList_Search(struct LinkedList * list, int val){
 int LinkedList_Insert(struct LinkedList * list, struct Node* element, int index){
     struct Node* actual;
 
-    if(list->length > 0){
+    if(index <= list->length){
         if(index == 0){
             element->next = list->head;
             list->head = element;
+            if(list->length == 0){
+                list->tail = element;
+            }
             list->length++;
             return 1;
         } else if(index == list->length){
