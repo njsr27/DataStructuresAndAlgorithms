@@ -127,3 +127,25 @@ void Insert_TEST() {
     LinkedList_Display(&list);
     printf("Length: %d\n", list.length);
 }
+
+void Insert_Sorted_TEST() {
+    printf("===== Insert_Sorted_TEST =====\n");
+
+    struct LinkedList list = LinkedList_New();
+    LinkedList_Add(&list, 5);
+    LinkedList_Add(&list, 13);
+    LinkedList_Add(&list, 55);
+    LinkedList_Add(&list, 88);
+    LinkedList_Add(&list, 156);
+
+    LinkedList_Insert_Sorted(&list, 77);
+
+    /*LinkedList_Insert_Sorted(&list, 5);
+    LinkedList_Insert_Sorted(&list, 45);
+    LinkedList_Insert_Sorted(&list, 12);
+    LinkedList_Insert_Sorted(&list, 85);
+    LinkedList_Insert_Sorted(&list, 19);*/
+
+    LinkedList_Display(&list);
+    printf("Length: %d\n", list.length);
+}

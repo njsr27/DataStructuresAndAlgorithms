@@ -153,3 +153,37 @@ int LinkedList_Insert(struct LinkedList * list, int val, int index){
         return -1;
     }
 }
+
+//We imply and ASC order
+void LinkedList_Insert_Sorted(struct LinkedList* list, int val){
+    struct Node* previous = list->head;
+    struct Node* actual = list->head;
+    struct Node* element = Node_New(val);
+
+    if(list->length == 0){
+        list->head = element;
+        list->tail = element;
+        list->length++;
+        return;
+    }
+
+    for (int i = 1; i <= list->length; ++i) {
+        if(val <= actual->value){
+            element->next = actual;
+            if(i == 1){
+                list->head = element;
+            } else {
+                previous->next = element;
+            }
+            list->length++;
+            return;
+        }
+        previous = actual;
+        actual = actual->next;
+    }
+
+    list->tail->next = element;
+    list->tail = element;
+    list->length++;
+    return;
+}
