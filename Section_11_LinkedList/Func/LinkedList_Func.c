@@ -3,8 +3,8 @@
 
 struct LinkedList LinkedList_New() {
     struct LinkedList list;
-    list.head = (void*)0;
-    list.tail = (void*)0;
+    list.head = (void *) 0;
+    list.tail = (void *) 0;
     list.length = 0;
     return list;
 }
@@ -12,7 +12,7 @@ struct LinkedList LinkedList_New() {
 void LinkedList_Add(struct LinkedList *list, int val) {
     struct Node *element = Node_New(val);
 
-    if(list->length == 0){
+    if (list->length == 0) {
         list->head = element;
     } else {
         list->tail->next = element;
@@ -22,10 +22,10 @@ void LinkedList_Add(struct LinkedList *list, int val) {
     list->length++;
 }
 
-void LinkedList_Display(struct LinkedList * list){
+void LinkedList_Display(struct LinkedList *list) {
     printf("=== Elements in LinkedList ===\n");
 
-    struct Node* actual = list->head;
+    struct Node *actual = list->head;
 
     for (int i = 1; i <= list->length; ++i) {
         printf("%d ", actual->value);
@@ -35,17 +35,17 @@ void LinkedList_Display(struct LinkedList * list){
     printf("\n");
 }
 
-int LinkedList_Sum(struct LinkedList * list){
-    struct Node* actual;
-    int total ;
+int LinkedList_Sum(struct LinkedList *list) {
+    struct Node *actual;
+    int total;
 
-    if(list->length > 0){
+    if (list->length > 0) {
         actual = list->head;
         total = actual->value;
         actual = actual->next;
 
         for (int i = 2; i <= list->length; ++i) {
-            total+=actual->value;
+            total += actual->value;
             actual = actual->next;
         }
 
@@ -55,17 +55,17 @@ int LinkedList_Sum(struct LinkedList * list){
     }
 }
 
-int LinkedList_Max(struct LinkedList * list){
-    struct Node* actual;
+int LinkedList_Max(struct LinkedList *list) {
+    struct Node *actual;
     int max;
 
-    if(list->length > 0){
+    if (list->length > 0) {
         actual = list->head;
         max = actual->value;
         actual = actual->next;
 
         for (int i = 2; i <= list->length; ++i) {
-            if(actual->value > max){
+            if (actual->value > max) {
                 max = actual->value;
             }
             actual = actual->next;
@@ -77,17 +77,17 @@ int LinkedList_Max(struct LinkedList * list){
     }
 }
 
-int LinkedList_Min(struct LinkedList * list){
-    struct Node* actual;
+int LinkedList_Min(struct LinkedList *list) {
+    struct Node *actual;
     int min;
 
-    if(list->length > 0){
+    if (list->length > 0) {
         actual = list->head;
         min = actual->value;
         actual = actual->next;
 
         for (int i = 2; i <= list->length; ++i) {
-            if(actual->value < min){
+            if (actual->value < min) {
                 min = actual->value;
             }
             actual = actual->next;
@@ -99,39 +99,39 @@ int LinkedList_Min(struct LinkedList * list){
     }
 }
 
-struct Node* LinkedList_Search(struct LinkedList * list, int val){
-    struct Node* actual;
+struct Node *LinkedList_Search(struct LinkedList *list, int val) {
+    struct Node *actual;
 
-    if(list->length > 0){
+    if (list->length > 0) {
         actual = list->head;
 
         for (int i = 1; i <= list->length; ++i) {
-            if(actual->value == val){
-               return actual;
+            if (actual->value == val) {
+                return actual;
             }
             actual = actual->next;
         }
 
-        return (void*)0;
+        return (void *) 0;
     } else {
-        return (void*)0;
+        return (void *) 0;
     }
 }
 
-int LinkedList_Insert(struct LinkedList * list, int val, int index){
-    struct Node* actual;
+int LinkedList_Insert(struct LinkedList *list, int val, int index) {
+    struct Node *actual;
     struct Node *element = Node_New(val);
 
-    if(index <= list->length){
-        if(index == 0){
+    if (index <= list->length) {
+        if (index == 0) {
             element->next = list->head;
             list->head = element;
-            if(list->length == 0){
+            if (list->length == 0) {
                 list->tail = element;
             }
             list->length++;
             return 1;
-        } else if(index == list->length){
+        } else if (index == list->length) {
             list->tail->next = element;
             list->tail = element;
             list->length++;
@@ -139,7 +139,7 @@ int LinkedList_Insert(struct LinkedList * list, int val, int index){
         } else {
             actual = list->head;
             for (int i = 1; i <= index; ++i) {
-                if(i == index){
+                if (i == index) {
                     element->next = actual->next;
                     actual->next = element;
                     list->length++;
@@ -155,12 +155,12 @@ int LinkedList_Insert(struct LinkedList * list, int val, int index){
 }
 
 //We imply ASC order
-void LinkedList_Insert_Sorted(struct LinkedList* list, int val){
-    struct Node* previous = list->head;
-    struct Node* actual = list->head;
-    struct Node* element = Node_New(val);
+void LinkedList_Insert_Sorted(struct LinkedList *list, int val) {
+    struct Node *previous = list->head;
+    struct Node *actual = list->head;
+    struct Node *element = Node_New(val);
 
-    if(list->length == 0){
+    if (list->length == 0) {
         list->head = element;
         list->tail = element;
         list->length++;
@@ -168,9 +168,9 @@ void LinkedList_Insert_Sorted(struct LinkedList* list, int val){
     }
 
     for (int i = 1; i <= list->length; ++i) {
-        if(val <= actual->value){
+        if (val <= actual->value) {
             element->next = actual;
-            if(i == 1){
+            if (i == 1) {
                 list->head = element;
             } else {
                 previous->next = element;
@@ -185,5 +185,76 @@ void LinkedList_Insert_Sorted(struct LinkedList* list, int val){
     list->tail->next = element;
     list->tail = element;
     list->length++;
+    return;
+}
+
+int LinkedList_Delete(struct LinkedList *list, int index) {
+    struct Node *previous = list->head;
+    struct Node *actual = list->head->next;
+
+    if (index > list->length - 1) {
+        printf("Index out of bounds.\n");
+        return -1;
+    }
+
+    if (index == 0) {
+        list->head = actual;
+        free(previous);
+        list->length--;
+        return 1;
+    } else {
+        for (int i = 1; i < list->length; ++i) {
+            if (i == index) {
+                if (index == list->length - 1) {
+                    previous->next = (void *) 0;
+                    list->tail = previous;
+                } else {
+                    previous->next = actual->next;
+                }
+
+                free(actual);
+                list->length--;
+                return 1;
+            }
+            previous = actual;
+            actual = actual->next;
+        }
+    }
+}
+
+//We imply ASC order
+int LinkedList_IsSorted(struct LinkedList *list) {
+    struct Node *actual = list->head;
+    struct Node *next = list->head->next;
+
+    for (int i = 1; i < list->length; ++i) {
+        if (next->value < actual->value) {
+            return 0;
+        }
+        actual = next;
+        next = next->next;
+    }
+
+    return 1;
+}
+
+//We imply ASC order
+void LinkedList_RemoveDup(struct LinkedList *list) {
+    struct Node *act = list->head;
+    struct Node *nxt = list->head->next;
+    int total = list->length;
+
+    for (int i = 1; i < total; ++i) {
+        if (act->value == nxt->value) {
+            act->next = nxt->next;
+            free(nxt);
+            nxt = act->next;
+            list->length--;
+        } else {
+            act = nxt;
+            nxt = nxt->next;
+        }
+    }
+
     return;
 }

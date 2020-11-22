@@ -7,7 +7,8 @@ int main() {
     //Min_Max_TEST();
     //Search_TEST();
     //Insert_TEST();
-    Insert_Sorted_TEST();
+    //Insert_Sorted_TEST();
+    RemoveDup_TEST();
 
     return 0;
 }

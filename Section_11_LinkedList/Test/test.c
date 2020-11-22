@@ -91,7 +91,7 @@ void Search_TEST() {
     LinkedList_Add(&list, 145);
     LinkedList_Add(&list, 123);
 
-    if(LinkedList_Search(&list, 5)){
+    if (LinkedList_Search(&list, 5)) {
         printf("Element found!\n");
     } else {
         printf("Element not found!\n");
@@ -145,6 +145,65 @@ void Insert_Sorted_TEST() {
     LinkedList_Insert_Sorted(&list, 12);
     LinkedList_Insert_Sorted(&list, 85);
     LinkedList_Insert_Sorted(&list, 19);*/
+
+    LinkedList_Display(&list);
+    printf("Length: %d\n", list.length);
+}
+
+void Delete_TEST() {
+    printf("===== Delete_TEST =====\n");
+
+    struct LinkedList list = LinkedList_New();
+    LinkedList_Add(&list, 5);
+    LinkedList_Add(&list, 13);
+    LinkedList_Add(&list, 55);
+    LinkedList_Add(&list, 88);
+    LinkedList_Add(&list, 156);
+
+    LinkedList_Delete(&list, 0);
+
+    /*LinkedList_Insert_Sorted(&list, 5);
+    LinkedList_Insert_Sorted(&list, 45);
+    LinkedList_Insert_Sorted(&list, 12);
+    LinkedList_Insert_Sorted(&list, 85);
+    LinkedList_Insert_Sorted(&list, 19);*/
+
+    LinkedList_Display(&list);
+    printf("Length: %d\n", list.length);
+}
+
+void IsSorted_TEST() {
+    printf("===== IsSorted_TEST =====\n");
+
+    struct LinkedList list = LinkedList_New();
+    LinkedList_Add(&list, 5);
+    LinkedList_Add(&list, 13);
+    LinkedList_Add(&list, 77);
+    LinkedList_Add(&list, 88);
+    LinkedList_Add(&list, 89);
+
+    if (LinkedList_IsSorted(&list))
+        printf("Is sorted!");
+    else
+        printf("Is not sorted!");
+}
+
+void RemoveDup_TEST() {
+    printf("===== RemoveDup_TEST =====\n");
+
+    struct LinkedList list = LinkedList_New();
+    LinkedList_Add(&list, 5);
+    LinkedList_Add(&list, 5);
+    LinkedList_Add(&list, 55);
+    LinkedList_Add(&list, 88);
+    LinkedList_Add(&list, 156);
+    LinkedList_Add(&list, 222);
+    LinkedList_Add(&list, 251);
+    LinkedList_Add(&list, 251);
+    LinkedList_Add(&list, 288);
+    LinkedList_Add(&list, 288);
+
+    LinkedList_RemoveDup(&list);
 
     LinkedList_Display(&list);
     printf("Length: %d\n", list.length);
