@@ -154,7 +154,7 @@ int LinkedList_Insert(struct LinkedList * list, int val, int index){
     }
 }
 
-//We imply and ASC order
+//We imply ASC order
 void LinkedList_Insert_Sorted(struct LinkedList* list, int val){
     struct Node* previous = list->head;
     struct Node* actual = list->head;
