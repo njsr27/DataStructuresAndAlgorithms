@@ -258,3 +258,37 @@ void LinkedList_RemoveDup(struct LinkedList *list) {
 
     return;
 }
+
+void LinkedList_Reverse(struct LinkedList *list) {
+    /*int aux[list->length];
+    struct Node *stub = list->head;
+
+    for (int i = 0; i < list->length; ++i) {
+        aux[i] = stub->value;
+        stub = stub->next;
+    }
+
+    stub = list->head;
+
+    for (int i = list->length - 1; i >= 0; --i) {
+        stub->value = aux[i];
+        stub = stub->next;
+    }
+
+    free(stub);*/
+
+    struct Node *p = list->head;
+    struct Node *q = (void *) 0;
+    struct Node *r = (void *) 0;
+
+    for (int i = 1; i <= list->length; ++i) {
+        r = q;
+        q = p;
+        p = p->next;
+        q->next = r;
+    }
+
+    list->head = q;
+    list->tail = r;
+}
+

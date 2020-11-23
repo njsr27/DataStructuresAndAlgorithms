@@ -8,7 +8,8 @@ int main() {
     //Search_TEST();
     //Insert_TEST();
     //Insert_Sorted_TEST();
-    RemoveDup_TEST();
+    //RemoveDup_TEST();
+    Reverse_TEST();
 
-    return 0;
+    return 1;
 }

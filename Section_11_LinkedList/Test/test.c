@@ -208,3 +208,23 @@ void RemoveDup_TEST() {
     LinkedList_Display(&list);
     printf("Length: %d\n", list.length);
 }
+
+void Reverse_TEST() {
+    printf("===== Reverse_TEST =====\n");
+
+    struct LinkedList list = LinkedList_New();
+
+    LinkedList_Add(&list, 5);
+    LinkedList_Add(&list, 55);
+    LinkedList_Add(&list, 88);
+    LinkedList_Add(&list, 156);
+    LinkedList_Add(&list, 222);
+    LinkedList_Add(&list, 251);
+    LinkedList_Add(&list, 288);
+
+    LinkedList_Display(&list);
+
+    LinkedList_Reverse(&list);
+
+    LinkedList_Display(&list);
+}
