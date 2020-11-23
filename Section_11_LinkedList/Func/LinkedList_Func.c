@@ -278,10 +278,12 @@ void LinkedList_Reverse(struct LinkedList *list) {
     free(stub);*/
 
     struct Node *p = list->head;
-    struct Node *q = (void *) 0;
-    struct Node *r = (void *) 0;
+    struct Node *q;
+    struct Node *r;
 
-    for (int i = 1; i <= list->length; ++i) {
+    list->tail = p;
+
+    for (int i = 0; i < list->length; ++i) {
         r = q;
         q = p;
         p = p->next;
@@ -289,6 +291,5 @@ void LinkedList_Reverse(struct LinkedList *list) {
     }
 
     list->head = q;
-    list->tail = r;
 }
 
