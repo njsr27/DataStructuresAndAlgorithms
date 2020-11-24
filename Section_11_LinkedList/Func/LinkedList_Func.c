@@ -293,3 +293,66 @@ void LinkedList_Reverse(struct LinkedList *list) {
     list->head = q;
 }
 
+void LinkedList_Concat(struct LinkedList *list1, struct LinkedList *list2) {
+    list1->tail->next = list2->head;
+    list1->length += list1->length;
+}
+
+//We imply ASC order
+struct LinkedList LinkedList_Merge(struct LinkedList *list1, struct LinkedList *list2) {
+    struct LinkedList final = LinkedList_New();
+    struct Node *stubFinal;
+    struct Node *stubI = list1->head;
+    struct Node *stubJ = list2->head;
+    int i = 0;
+    int j = 0;
+
+    if (stubI->value <= stubJ->value) {
+        final.head = stubI;
+        i++;
+        stubI = stubI->next;
+    } else {
+        final.head = stubJ;
+        j++;
+        stubJ = stubJ->next;
+    }
+
+    stubFinal = final.head;
+    final.length++;
+
+    while (i < list1->length && j < list1->length) {
+        if (stubI->value <= stubJ->value) {
+            stubFinal->next = stubI;
+            i++;
+            stubI = stubI->next;
+        } else {
+            stubFinal->next = stubJ;
+            j++;
+            stubJ = stubJ->next;
+        }
+        stubFinal = stubFinal->next;
+        final.length++;
+    }
+
+    if (i == list1->length && j != list2->length) {
+        while (j < list2->length) {
+            stubFinal->next = stubJ;
+            stubFinal = stubFinal->next;
+            j++;
+            stubJ = stubJ->next;
+            final.length++;
+        }
+    } else if (i != list1->length && j == list2->length) {
+        while (i < list1->length) {
+            stubFinal->next = stubI;
+            stubFinal = stubFinal->next;
+            i++;
+            stubI = stubI->next;
+            final.length++;
+        }
+    }
+
+    final.tail = stubFinal;
+    return final;
+}
+

@@ -228,3 +228,51 @@ void Reverse_TEST() {
 
     LinkedList_Display(&list);
 }
+
+void Concat_TEST() {
+    printf("===== Concat_TEST =====\n");
+
+    struct LinkedList list1 = LinkedList_New();
+    struct LinkedList list2 = LinkedList_New();
+
+    LinkedList_Add(&list1, 5);
+    LinkedList_Add(&list1, 55);
+    LinkedList_Add(&list1, 88);
+    LinkedList_Add(&list1, 156);
+    LinkedList_Add(&list2, 222);
+    LinkedList_Add(&list2, 251);
+    LinkedList_Add(&list2, 288);
+
+    LinkedList_Concat(&list1, &list2);
+
+    LinkedList_Display(&list1);
+}
+
+void Merge_TEST() {
+    printf("===== Merge_TEST =====\n");
+
+    struct LinkedList list1 = LinkedList_New();
+    struct LinkedList list2 = LinkedList_New();
+
+    LinkedList_Add(&list1, 5);
+    LinkedList_Add(&list1, 55);
+    LinkedList_Add(&list1, 88);
+    LinkedList_Add(&list1, 156);
+    LinkedList_Add(&list1, 156);
+    //LinkedList_Add(&list1, 168);
+
+    LinkedList_Add(&list2, 85);
+    LinkedList_Add(&list2, 99);
+    LinkedList_Add(&list2, 110);
+    LinkedList_Add(&list2, 125);
+    LinkedList_Add(&list2, 350);
+    LinkedList_Add(&list2, 450);
+    LinkedList_Add(&list2, 510);
+
+    struct LinkedList listFinal = LinkedList_Merge(&list1, &list2);
+
+    LinkedList_Display(&listFinal);
+    printf("Length: %d\n", listFinal.length);
+    printf("Head value: %d\n", listFinal.head->value);
+    printf("Tail value: %d\n", listFinal.tail->value);
+}
