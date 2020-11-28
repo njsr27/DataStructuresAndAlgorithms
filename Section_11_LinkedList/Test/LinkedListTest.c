@@ -1,6 +1,6 @@
 #include "stdio.h"
-#include "../Func/Node_Func.c"
-#include "../Func/LinkedList_Func.c"
+#include "../Func/LinkedList/Node_Func.c"
+#include "../Func/LinkedList/LinkedList_Func.c"
 
 void Initialization_TEST() {
     printf("===== Initialization_TEST =====\n");
