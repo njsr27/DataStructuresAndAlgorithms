@@ -123,6 +123,7 @@ void DLinkedList_Reverse(struct DLinkedList *list) {
         }
         if (i == list->length - 1) {
             list->head = actual;
+            break;
         }
         actual = actual->previous;
     }
