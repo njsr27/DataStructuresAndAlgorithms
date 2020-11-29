@@ -20,7 +20,8 @@ int main() {
     //===== Doubly linked list =====
 
     //Initialization_TEST();
-    Insert_TEST();
+    //Insert_TEST();
+    Delete_TEST();
 
     return 1;
 }

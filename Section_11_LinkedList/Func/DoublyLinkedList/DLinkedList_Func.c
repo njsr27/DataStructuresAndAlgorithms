@@ -73,3 +73,39 @@ int DLinkedList_Insert(struct DLinkedList *list, int index, int value) {
     list->length++;
     return 1;
 }
+
+int DLinkedList_Delete(struct DLinkedList *list, int index) {
+    struct DNode *stub;
+
+    if (index > list->length) {
+        printf("Index %d out of bounds.\n", index);
+        return 0;
+    } else {
+        if (index == 0) {
+            if (list->length != 0) {
+                stub = list->head;
+                list->head = list->head->next;
+                free(stub);
+            }
+        } else if (index == list->length) {
+            stub = list->tail;
+            list->tail->previous->next = (void *) 0;
+            list->tail = list->tail->previous;
+            free(stub);
+        } else {
+            stub = list->head->next;
+            for (int i = 1; i < list->length; ++i) {
+                if (i == index) {
+                    stub->previous->next = stub->next;
+                    stub->next->previous = stub->previous;
+                    free(stub);
+                    break;
+                }
+                stub = stub->next;
+            }
+        }
+    }
+
+    list->length--;
+    return 1;
+}
