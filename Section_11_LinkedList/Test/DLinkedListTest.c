@@ -27,7 +27,7 @@ void Insert_TEST() {
     DLinkedList_Insert(&list, 0, 111);
 
     DLinkedList_Display(&list);
-    DLinkedList_Display_Inverse(&list);
+    DLinkedList_Display_Reverse(&list);
     printf("Length: %d\n", list.length);
 }
 
@@ -50,7 +50,7 @@ void Delete_TEST() {
     //DLinkedList_Delete(&list, 5);
 
     DLinkedList_Display(&list);
-    DLinkedList_Display_Inverse(&list);
+    DLinkedList_Display_Reverse(&list);
     printf("Length: %d\n", list.length);
 }
 
@@ -64,15 +64,24 @@ void Reverse_TEST() {
     DLinkedList_Insert(&list, 2, 88);
     DLinkedList_Insert(&list, 3, 109);
     DLinkedList_Insert(&list, 4, 50);
+    DLinkedList_Insert(&list, 5, 75);
+    DLinkedList_Insert(&list, 6, 142);
+    DLinkedList_Insert(&list, 7, 120);
+    DLinkedList_Insert(&list, 8, 5);
+    DLinkedList_Insert(&list, 9, 19);
 
     DLinkedList_Display(&list);
     printf("First element: %d\n", list.head->value);
     printf("Last element: %d\n", list.tail->value);
     printf("Length: %d\n", list.length);
 
+    printf("---------------------------\n");
+
     DLinkedList_Reverse(&list);
 
     DLinkedList_Display(&list);
+    DLinkedList_Display_Reverse(&list);
+
     printf("First element: %d\n", list.head->value);
     printf("Last element: %d\n", list.tail->value);
     printf("Length: %d\n", list.length);

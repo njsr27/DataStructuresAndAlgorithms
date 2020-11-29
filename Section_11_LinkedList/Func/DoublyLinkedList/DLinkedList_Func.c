@@ -21,8 +21,8 @@ void DLinkedList_Display(struct DLinkedList *list) {
     printf("\n");
 }
 
-void DLinkedList_Display_Inverse(struct DLinkedList *list) {
-    printf("=== Elements in inverted Doubly LinkedList ===\n");
+void DLinkedList_Display_Reverse(struct DLinkedList *list) {
+    printf("=== Elements in reversed Doubly LinkedList ===\n");
 
     struct DNode *actual = list->tail;
 
@@ -111,18 +111,19 @@ int DLinkedList_Delete(struct DLinkedList *list, int index) {
 }
 
 void DLinkedList_Reverse(struct DLinkedList *list) {
+    struct DNode *actual = list->head;
     struct DNode *temp;
-    struct DNode *p = list->head;
-
-    list->tail = p;
 
     for (int i = 0; i < list->length; ++i) {
-        temp = p->next;
-        p->next = p->previous;
-        p->previous = temp;
-        p = p->previous;
-        if (p != NULL && p->next == NULL) {
-            list->head = p;
+        temp = actual->next;
+        actual->next = actual->previous;
+        actual->previous = temp;
+        if (i == 0) {
+            list->tail = actual;
         }
+        if (i == list->length - 1) {
+            list->head = actual;
+        }
+        actual = actual->previous;
     }
 }
