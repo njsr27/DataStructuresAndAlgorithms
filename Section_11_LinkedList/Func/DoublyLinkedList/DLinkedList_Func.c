@@ -109,3 +109,20 @@ int DLinkedList_Delete(struct DLinkedList *list, int index) {
     list->length--;
     return 1;
 }
+
+void DLinkedList_Reverse(struct DLinkedList *list) {
+    struct DNode *temp;
+    struct DNode *p = list->head;
+
+    list->tail = p;
+
+    for (int i = 0; i < list->length; ++i) {
+        temp = p->next;
+        p->next = p->previous;
+        p->previous = temp;
+        p = p->previous;
+        if (p != NULL && p->next == NULL) {
+            list->head = p;
+        }
+    }
+}

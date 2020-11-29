@@ -21,7 +21,8 @@ int main() {
 
     //Initialization_TEST();
     //Insert_TEST();
-    Delete_TEST();
+    //Delete_TEST();
+    Reverse_TEST();
 
     return 1;
 }

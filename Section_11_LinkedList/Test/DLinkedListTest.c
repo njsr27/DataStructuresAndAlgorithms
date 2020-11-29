@@ -53,3 +53,27 @@ void Delete_TEST() {
     DLinkedList_Display_Inverse(&list);
     printf("Length: %d\n", list.length);
 }
+
+void Reverse_TEST() {
+    printf("===== Reverse_TEST =====\n");
+
+    struct DLinkedList list = DLinkedList_New();
+
+    DLinkedList_Insert(&list, 0, 10);
+    DLinkedList_Insert(&list, 1, 15);
+    DLinkedList_Insert(&list, 2, 88);
+    DLinkedList_Insert(&list, 3, 109);
+    DLinkedList_Insert(&list, 4, 50);
+
+    DLinkedList_Display(&list);
+    printf("First element: %d\n", list.head->value);
+    printf("Last element: %d\n", list.tail->value);
+    printf("Length: %d\n", list.length);
+
+    DLinkedList_Reverse(&list);
+
+    DLinkedList_Display(&list);
+    printf("First element: %d\n", list.head->value);
+    printf("Last element: %d\n", list.tail->value);
+    printf("Length: %d\n", list.length);
+}
