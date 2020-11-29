@@ -1,5 +1,5 @@
 struct DNode {
     int value;
-    struct Node *next;
-    struct Node *previous;
+    struct DNode *next;
+    struct DNode *previous;
 };

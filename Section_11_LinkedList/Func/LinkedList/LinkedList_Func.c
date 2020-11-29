@@ -1,5 +1,6 @@
 #include "stdio.h"
 #include "../../ADT/LinkedList/LinkedList.c"
+#include "Node_Func.c"
 
 struct LinkedList LinkedList_New() {
     struct LinkedList list;

@@ -19,7 +19,8 @@ int main() {
 
     //===== Doubly linked list =====
 
-    Initialization_TEST();
+    //Initialization_TEST();
+    Insert_TEST();
 
     return 1;
 }
