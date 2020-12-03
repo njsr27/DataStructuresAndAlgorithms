@@ -20,7 +20,9 @@
 int main() {
     //Initialization_TEST();
     //Push_TEST();
-    Pop_TEST();
+    //Pop_TEST();
+    //Peek_TEST();
+    StackTop_TEST();
 
     return 0;
 }
