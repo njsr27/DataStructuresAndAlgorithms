@@ -47,6 +47,12 @@ int Queue_Dequeue(Queue *queue) {
     if (queue->length == 0) {
         printf("Empty queue!.\n");
         return -1;
+    } else if (queue->length == 1) {
+        returnVal = queue->head->value;
+        queue->head = (void *) 0;
+        queue->tail = (void *) 0;
+        queue->length--;
+        return returnVal;
     } else {
         returnVal = queue->head->value;
         queue->head = queue->head->next;
