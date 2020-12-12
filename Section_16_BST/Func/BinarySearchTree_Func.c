@@ -43,6 +43,40 @@ void BST_Insert(BST *tree, int element) {
     return;
 }
 
+int BST_Find(BST *tree, int element) {
+    Node *actual;
+
+    if (tree->length == 0) {
+        printf("Tree empty!\n");
+        return 0;
+    } else {
+        actual = tree->root;
+        while (1) {
+            if (element < actual->value) {
+                if (actual->left) {
+                    actual = actual->left;
+                    continue;
+                } else {
+                    return 0;
+                }
+            } else if (element > actual->value) {
+                if (actual->right) {
+                    actual = actual->right;
+                    continue;
+                } else {
+                    return 0;
+                }
+            } else {
+                return 1;
+            }
+        }
+    }
+}
+
+int BST_Count(BST *bst) {
+    return bst->length;
+}
+
 void BST_PreOrder(BST *bst) {
     printf("=== Pre order ===\n");
     Node_PreOrder(bst->root);

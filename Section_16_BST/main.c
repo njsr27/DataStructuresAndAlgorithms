@@ -14,16 +14,13 @@
  *      .PreOrder()
  *      .InOrder()
  *      .PostOrder()
- *
- *      .Delete(x)
  *      .Find(x)
  *      .Count()
- *      .Height()
- *      .CountLeafNodes()
  *
  */
 int main() {
     //Initialization_TEST();
-    Insert_TEST();
+    //Insert_TEST();
+    //Find_TEST();
     return 0;
 }

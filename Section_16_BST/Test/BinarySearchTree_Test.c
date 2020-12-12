@@ -24,3 +24,24 @@ void Insert_TEST() {
 
     BST_Display(&bst);
 }
+
+void Find_TEST() {
+    printf("===== Delete_TEST =====\n");
+
+    BST bst = BST_New();
+
+    BST_Insert(&bst, 5);
+    BST_Insert(&bst, 4);
+    BST_Insert(&bst, 66);
+    BST_Insert(&bst, 78);
+    BST_Insert(&bst, 70);
+    BST_Insert(&bst, 80);
+    BST_Insert(&bst, 34);
+    BST_Insert(&bst, 11);
+
+    if (BST_Find(&bst, 99)) {
+        printf("Element found!\n");
+    } else {
+        printf("Element not found!\n");
+    }
+}
