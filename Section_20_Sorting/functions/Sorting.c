@@ -12,7 +12,7 @@ void List_Swap(int *list, int j, int i) {
     list[j] = list[j] - list[i];
 }
 
-void List_Sort_Bubble(int *list, int length) {
+void List_Sort_Bubble(int list[], int length) {
     int comp = 0;
     int swap = 0;
     int compFlag = 0;
@@ -28,6 +28,26 @@ void List_Sort_Bubble(int *list, int length) {
         }
         if (!compFlag) { //Flag created to prevent extra comparisons in an ordered array
             break;
+        }
+    }
+
+    printf("\nNumber of comparisons %d\n", comp);
+    printf("Number of swaps %d\n", swap);
+}
+
+void List_Sort_Insertion(int list[], int length) {
+    int comp = 0;
+    int swap = 0;
+
+    for (int i = 1; i < length; ++i) { //"Pass" handler
+        for (int j = i - 1; j >= 0; --j) {
+            comp++;
+            if (list[j] >= list[j + 1]) { //Natural order
+                List_Swap(list, j, j + 1);
+                swap++;
+            } else {
+                break;
+            }
         }
     }
 
