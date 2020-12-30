@@ -65,5 +65,3 @@ void List_Sort_Selection(int list[], int length) {
     printf("\nNumber of comparisons %d\n", comp);
     printf("Number of swaps %d\n", swap);
 }
-
-//Test
