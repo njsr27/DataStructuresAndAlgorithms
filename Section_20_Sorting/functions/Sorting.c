@@ -1,16 +1,5 @@
 #include <stdio.h>
-
-void List_Display(int *list, int length) {
-    for (int i = 0; i < length; ++i) {
-        printf("%d ", list[i]);
-    }
-}
-
-void List_Swap(int *list, int j, int i) {
-    list[j] = list[j] + list[i];
-    list[i] = list[j] - list[i];
-    list[j] = list[j] - list[i];
-}
+#include "Utils.c"
 
 void List_Sort_Bubble(int list[], int length) {
     int comp = 0;
@@ -48,6 +37,28 @@ void List_Sort_Insertion(int list[], int length) {
             } else {
                 break;
             }
+        }
+    }
+
+    printf("\nNumber of comparisons %d\n", comp);
+    printf("Number of swaps %d\n", swap);
+}
+
+void List_Sort_Selection(int list[], int length) {
+    int comp = 0;
+    int swap = 0;
+    int minIndex;
+
+    for (int i = 0; i < length - 1; ++i) { //"Pass" handler
+        comp += (length - 1) - i;
+        minIndex = List_GetMinIndex(list, i, length - 1);
+        if (i != minIndex) {
+            swap++;
+            List_Swap(
+                    list,
+                    minIndex,
+                    i
+            );
         }
     }
 
