@@ -1,7 +1,4 @@
-//#include "tests/Bubble_Sort_Tests.c"
-//#include "tests/Insertion_Sort_Tests.c"
-//#include "tests/Selection_Sort_Tests.c"
-#include "tests/Quick_Sort_Tests.c"
+#include "tests/Merge_Sort_Tests.c"
 
 /**
  * Algorithms
@@ -25,7 +22,8 @@ int main() {
     //Bubble_Sort_Test();
     //Insertion_Sort_Test();
     //Selection_Sort_Test();
-    Quick_Sort_Test();
+    //Quick_Sort_Test();
+    Merge_Sort_Test();
     return 0;
 }
 

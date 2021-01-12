@@ -93,3 +93,14 @@ void List_Sort_Quick(int list[], int l, int h) {
         List_Sort_Quick(list, j + 1, h);
     }
 }
+
+void List_Sort_Merge(int list[], int l, int h) {
+    if (l < h) {
+        int m = l + (h - l) / 2;
+
+        List_Sort_Merge(list, l, m);
+        List_Sort_Merge(list, m + 1, h);
+
+        List_Merge(list, l, m, h);
+    }
+}
